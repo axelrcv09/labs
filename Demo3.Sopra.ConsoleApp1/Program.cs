@@ -22,43 +22,178 @@ namespace Demo3.Sopra.ConsoleApp1
             // Clientes de USA
 
             var clientesUSA = context.Customers
-                .Where(r => r.Country == "Spain")
+                .Where(r => r.Country == "USA")
                 .OrderBy(r => r.City)
                 .ToList();
 
-            var clientes2 = from r in context.Customers
-                            where r.Country == "Spain"
-                            orderby r.City
-                            select r;
-
-            foreach (var cliente2 in clientes)
+            foreach (var cliente in clientesUSA)
             {
-                Console.WriteLine($"ID: {cliente.CustomerID}");
-                Console.WriteLine($"Empresa: {cliente.CompanyName}");     // Cuidado porque si cambia la columna no saldría la información buscada
+                Console.WriteLine($"Nombre del contacto: {cliente.ContactName}");
+                Console.WriteLine($"Empresa: {cliente.CompanyName}"); 
                 Console.WriteLine($"Región: {cliente.City} - {cliente.Country}" + Environment.NewLine);
             }
 
+            Console.ReadKey();
+
             // Proveedores (Suppliers) de BERLIN
+
+            var proveedoresBerlin = context.Suppliers
+                .Where(r => r.City == "Berlin")
+                .OrderBy(r => r.CompanyName)
+                .ToList();
+
+            foreach (var cliente in proveedoresBerlin)
+            {
+                Console.WriteLine($"Nombre del contacto: {cliente.ContactName}");
+                Console.WriteLine($"Empresa: {cliente.CompanyName}");
+                Console.WriteLine($"Región: {cliente.City} - {cliente.Country}" + Environment.NewLine);
+            }
+
+            Console.ReadKey();
 
             // Los empleados con ID 3, 5 y 8
 
+            //int[] employeesIds = new int[] { 3, 5, 8 };
+
+            //var empleados2 = context.Employees
+            //    .Where(r => employeesIds.Contains(r.EmployeeID));
+
+            var empleados = context.Employees
+                .Where(r => (r.EmployeeID == 3) || (r.EmployeeID == 5) || (r.EmployeeID == 8))
+                .ToList();
+
+            foreach (var e in empleados)
+            {
+                Console.WriteLine($"Nombre del empleado: {e.FirstName} {e.LastName}" + Environment.NewLine);
+            }
+
+            Console.ReadKey();
+
             // Productos con stock mayor de cero
 
+            var productosStock = context.Products
+                .Where(r => r.UnitsInStock > 0)
+                .ToList();
+
+            foreach (var i in productosStock)
+            {
+                Console.WriteLine($"Producto: {i.ProductName}");
+                Console.WriteLine($"Cantidad en stock: {i.UnitsInStock}" + Environment.NewLine);
+            }
+
+            Console.ReadKey();
+
             // Productos con stock mayor de cero de los proveedores con id 1, 3 y 5
+            // Se puede hacer el mismo array que en el ejercicio anterior pero en este caso tiene que ser nulleable
+            var productosStockProveedores = context.Products
+                .Where(r => r.UnitsInStock > 0 && (r.SupplierID == 1) || (r.SupplierID == 3) || (r.SupplierID == 5))
+                .ToList();
+
+            foreach (var i in productosStock)
+            {
+                Console.WriteLine($"Producto: {i.ProductName}");
+                Console.WriteLine($"Cantidad en stock: {i.UnitsInStock}" + Environment.NewLine);
+            }
+
+            Console.ReadKey();
 
             // Productos precio mayor de 20 y menor de 90
 
+            var productosStockRango = context.Products
+                .Where(r => r.UnitPrice > 20 && r.UnitPrice < 90)
+                .ToList();
+
+            foreach (var i in productosStock)
+            {
+                Console.WriteLine($"Producto: {i.ProductName}");
+                Console.WriteLine($"Cantidad en stock: {i.UnitsInStock}" + Environment.NewLine);
+            }
+
+            Console.ReadKey();
+
             // Pedidos entre 01.01.97 y 15.07.97
+
+            var pedidos97 = context.Orders
+                .Where(r => (r.OrderDate >= new DateTime(1997, 01, 01) && r.OrderDate <= new DateTime(1997, 07, 15)))
+                .ToList();
+
+            foreach (var i in pedidos97)
+            {
+                Console.WriteLine($"ID Pedido: {i.OrderID}");
+                Console.WriteLine($"Fecha de pedido: {i.OrderDate}" + Environment.NewLine);
+            }
+
+            Console.ReadKey();
 
             // Pedidos del 97 registrado por los empleados con id 1, 3, 4 y 8
 
+            var pedidos97Empleados = context.Orders
+                .Where(r => (r.OrderDate.Value.Year == 97 
+                        && ((r.EmployeeID == 1) || (r.EmployeeID == 3) || (r.EmployeeID == 4) || r.EmployeeID == 8)))
+                .ToList();
+
+            foreach (var i in pedidos97Empleados)
+            {
+                Console.WriteLine($"ID Pedido: {i.OrderID}");
+                Console.WriteLine($"ID Empleado: {i.EmployeeID}");
+                Console.WriteLine($"Fecha de pedido: {i.OrderDate}" + Environment.NewLine);
+            }
+
+            Console.ReadKey();
+
             // Pedidos de abril del 96
+
+            var pedidosAbril96 = context.Orders
+                .Where(r => r.OrderDate.Value.Year == 96 && r.OrderDate.Value.Month == 4)
+                .ToList();
+
+            foreach (var i in pedidosAbril96)
+            {
+                Console.WriteLine($"ID Pedido: {i.OrderID}");
+                Console.WriteLine($"Fecha de pedido: {i.OrderDate}" + Environment.NewLine);
+            }
+
+            Console.ReadKey();
 
             // Pedidos del realizados los días uno de cada del año 98
 
+            var pedidos98 = context.Orders
+                .Where(r => r.OrderDate.Value.Year == 98 && r.OrderDate.Value.Day == 1)     // Los días que no haya pedido daría error
+                .ToList();
+
+            foreach (var i in pedidos98)
+            {
+                Console.WriteLine($"ID Pedido: {i.OrderID}");
+                Console.WriteLine($"Fecha de pedido: {i.OrderDate}" + Environment.NewLine);
+            }
+
             // Clientes que no tienen fax
 
+            var clientesSinFax = context.Customers
+                .Where(r => r.Fax == null)
+                .ToList();
+
+            foreach (var i in clientesSinFax)
+            {
+                Console.WriteLine($"Nombre contacto: {i.ContactName}");
+                Console.WriteLine($"Nombre empresa: {i.CompanyName}" + Environment.NewLine);
+            }
+
+            Console.ReadKey();
+
             // Los 10 productos más baratos
+
+            var productosBaratos = context.Products
+                .Select(r => new {r.ProductName, r.UnitPrice })
+                .OrderBy(r => r.UnitPrice)
+                .ToList();
+            
+            for(int i = 0; i < 10; i++)     // Mejor usar metodos take y skip
+            {
+                Console.WriteLine($"Producto y precio: {productosBaratos[i]}" + Environment.NewLine);
+            }
+
+            Console.ReadKey();
 
             // Los 10 productos más caros con stock
 
@@ -284,7 +419,7 @@ namespace Demo3.Sopra.ConsoleApp1
             // SELECT * FROM ListaProductos WHERE Precio > 2 
 
             var r3a = DataLists.ListaProductos
-                .Where(r => r.Precio > 2)
+                      .Where(r => r.Precio > 2)
                       .ToList();
 
             var r3b = from r in DataLists.ListaProductos
