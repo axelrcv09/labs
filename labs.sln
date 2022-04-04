@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo2.Sopra.ConsoleApp1", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo3.Sopra.ConsoleApp1", "Demo3.Sopra.ConsoleApp1\Demo3.Sopra.ConsoleApp1.csproj", "{7E256A02-3B7B-46D4-AABE-2038B5D9009B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo4.Sopra.ConsoleApp1", "Demo4.Sopra.ConsoleApp1\Demo4.Sopra.ConsoleApp1.csproj", "{9DE5382B-5676-4D8A-8387-B5A7545E6D88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo5.Sopra.ConsoleApp1", "Demo5.Sopra.ConsoleApp1\Demo5.Sopra.ConsoleApp1.csproj", "{D3E00069-2287-4841-93F7-BF4B84B39F32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{7E256A02-3B7B-46D4-AABE-2038B5D9009B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E256A02-3B7B-46D4-AABE-2038B5D9009B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E256A02-3B7B-46D4-AABE-2038B5D9009B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DE5382B-5676-4D8A-8387-B5A7545E6D88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DE5382B-5676-4D8A-8387-B5A7545E6D88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DE5382B-5676-4D8A-8387-B5A7545E6D88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DE5382B-5676-4D8A-8387-B5A7545E6D88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3E00069-2287-4841-93F7-BF4B84B39F32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3E00069-2287-4841-93F7-BF4B84B39F32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3E00069-2287-4841-93F7-BF4B84B39F32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3E00069-2287-4841-93F7-BF4B84B39F32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
