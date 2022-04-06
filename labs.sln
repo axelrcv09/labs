@@ -13,9 +13,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo2.Sopra.ConsoleApp1", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo3.Sopra.ConsoleApp1", "Demo3.Sopra.ConsoleApp1\Demo3.Sopra.ConsoleApp1.csproj", "{7E256A02-3B7B-46D4-AABE-2038B5D9009B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo4.Sopra.ConsoleApp1", "Demo4.Sopra.ConsoleApp1\Demo4.Sopra.ConsoleApp1.csproj", "{9DE5382B-5676-4D8A-8387-B5A7545E6D88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo4.Sopra.ConsoleApp1", "Demo4.Sopra.ConsoleApp1\Demo4.Sopra.ConsoleApp1.csproj", "{9DE5382B-5676-4D8A-8387-B5A7545E6D88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo5.Sopra.ConsoleApp1", "Demo5.Sopra.ConsoleApp1\Demo5.Sopra.ConsoleApp1.csproj", "{D3E00069-2287-4841-93F7-BF4B84B39F32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo5.Sopra.ConsoleApp1", "Demo5.Sopra.ConsoleApp1\Demo5.Sopra.ConsoleApp1.csproj", "{D3E00069-2287-4841-93F7-BF4B84B39F32}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo6.Sopra.ConsoleApp1", "Demo6.Sopra.ConsoleApp1\Demo6.Sopra.ConsoleApp1.csproj", "{F88CB41F-8038-4A72-8392-71DA17F239AF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo7.Sopra.ConsoleApp1", "Demo7.Sopra.ConsoleApp1\Demo7.Sopra.ConsoleApp1.csproj", "{64388FDF-D543-48AA-9383-98CB2249F161}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Sopra.WebApplication2", "Demo.Sopra.WebApplication2\Demo.Sopra.WebApplication2.csproj", "{6DD4A38F-FE94-40D4-8204-59FDAD33492C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +57,18 @@ Global
 		{D3E00069-2287-4841-93F7-BF4B84B39F32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3E00069-2287-4841-93F7-BF4B84B39F32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3E00069-2287-4841-93F7-BF4B84B39F32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F88CB41F-8038-4A72-8392-71DA17F239AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F88CB41F-8038-4A72-8392-71DA17F239AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F88CB41F-8038-4A72-8392-71DA17F239AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F88CB41F-8038-4A72-8392-71DA17F239AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64388FDF-D543-48AA-9383-98CB2249F161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64388FDF-D543-48AA-9383-98CB2249F161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64388FDF-D543-48AA-9383-98CB2249F161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64388FDF-D543-48AA-9383-98CB2249F161}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DD4A38F-FE94-40D4-8204-59FDAD33492C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DD4A38F-FE94-40D4-8204-59FDAD33492C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DD4A38F-FE94-40D4-8204-59FDAD33492C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DD4A38F-FE94-40D4-8204-59FDAD33492C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
