@@ -1,0 +1,17 @@
+﻿body {
+    #par1
+
+{
+    color: blue;
+    font-family: 'Arial';
+}
+
+.text-red {
+    color: red;
+}
+
+p {
+    color: green;
+    font-size: 28px;
+}
+}
