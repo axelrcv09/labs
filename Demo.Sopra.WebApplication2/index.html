@@ -29,23 +29,176 @@
                         <label for="apellido2" class="form-label">Apellido 2</label>
                         <input type="text" class="form-control" name="apellido2" id="apellido2" />
                     </div>
-                    <input type="button" class="btn btn-warning" value="Botón" />
+                    <input id="b1" type="button" class="btn btn-warning" value="Botón" />
                     <input type="submit" class="btn btn-success" value="Submit" />
                     <input type="reset" class="btn btn-primary" value="Reset" />
                 </form>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12">
+                <h1>Nuevos Elementos</h1>
+                <hr />
+                <div id="content" class="col-12" style="border: dotted 1px red; min-height:200px;"></div>
+                <br />
+                <div class="col-12">
+                    <input id="b2" />
+                </div>
+            </div>
+        </div>
     </div>
     <script type="text/javascript">
-        'use stric';
 
-        let global = "Hola Mundo";
+        class Alumno2 {
+            nombre = "";
+            apellido = "";
+            curso = 0;
 
-        function Saludo() {
-            document.write("<br /<h1>" + global + "</h1>");
+            constructor(nombre, apellido) {
+                this.nombre = nombre;
+                this.apellido = apellido
+            }
+
+            nombreCompleto() {
+                console.log(this.nombre + " " + this.apellido);
+            }
+
         }
 
-        Saludo();
+        class AlumnoEx extends Alumno2
+        {
+            dni = "";
+            provincia = "";
+            nombreCompleto() {
+                console.log("nueva función nombreCompleto");
+                super.nombreCompleto;
+            }
+
+            demoNuevaFuncion() { }
+        }
+
+        let miAlumno = new Alumno2("Fernando", "Adan");
+        miAlumno.nombreCompleto();
+
+        // DOM Document Object Model
+
+        const Alumno = function (nombre, apellido) {
+            var _private = "";
+
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.curso = 0;
+            this.nombreCompleto = function () {
+                console.log(this.nombre + " " + this.apellido)
+            }
+
+            this.getPrivado = function () { return _privado; }
+            this.setPrivado = function (value) { _private = value;}
+        };
+
+        Alumno.prototype = {
+            tutor: "",
+            saludo: function () {
+                console.log("Te saludo " + this.nombre);
+            }
+        }
+
+        let alum1 = new Alumno("Borja", "Cabeza");
+        alum1.tutor = "Javier Sánchez";
+        alum1.nombreCompleto();
+        alum1.saludo();
+
+        let alum2 = new Alumno("Ana", "Sanz");
+            alum2.nombreCompleto();
+
+        let alumno1 = new Object();
+        alumno1.nombre = "Borja";
+        alumno1.apellido = "Cabeza";
+        alumno1.curso = 10;
+        alumno1.NombreCompleto = function () {
+            console.log(this.nombre + " " + this.apellido)
+        }
+
+        let alumno2 = {};
+        alumno2.nombre = "Borja";
+        alumno2.apellido = "Cabeza";
+        alumno2.curso = 10;
+        alumno2.NombreCompleto = function () {
+            console.log(this.nombre + " " + this.apellido)
+        }
+
+        let alumno3 = {
+            nombre: "Borja",
+            apellido: "Cabeza",
+            curso: 10,
+            NombreCompleto: function () {
+                console.log(this.nombre + " " + this.apellido)
+            }
+        }
+
+        // Serializar
+
+        console.log(alum1);
+
+        // Transforma un Objeto a texto JSON
+        var json = JSON.stringify(alum1);
+        console.log(json);
+
+        // Transforma un texto JSON a Objeto
+        var obj = JSON.parse(json);
+        console.log(">>>>" + obj.nombre);
+
+        console.log(obj);
+
+        //function Demo2() {
+        //    function onClick(e) {
+        //        // e = undefined cuando se utiliza onclick="onClick()"
+
+        //        // e = objeto INPUT, cuando utilizamos onclick="onClick(this)"
+        //        e.value = "Grabar";
+
+        //        // e = objeto EVENT, cuando utilizamos onclick="onClick(event)"
+        //        e.target.value = "Grabar";
+
+        //        document.getElementById("b1").value = "Grabar";
+
+        //        window.alert("Click!!!");
+        //    }
+
+        //    document.getElementById("b1").onclick = function (e) {
+        //        e.value = "Grabar";
+        //        e.target.value = "Grabar";
+        //        window.alert("Click!!!");
+        //    }
+
+        //    document.getElementById("b1").addEventListener("click",) = function (e) {
+        //        e.value = "Grabar";
+        //        e.target.value = "Grabar";
+        //        window.alert("Click!!!");
+        //    }
+        //}
+
+        //function Demo() {
+        //    var boton = document.getElementById("b1");
+        //    boton.value = "Grabar";
+
+        //    var input1 = document.getElementsByName("nombre");
+        //    input1[0].value = "Axel";
+
+        //    var tag1 = document.getElementsByTagName("h1");
+        //    tag1[0].innerHTML = "Demo <b style='color:blue;'>Javascript</b>"
+
+        //    var h = 0;
+
+        //    var query1 = document.querySelector("#b1");
+
+        //    var query2 = document.querySelectorAll("btn");
+        //    var query3 = document.querySelectorAll("label");
+        //    var query4 = document.querySelectorAll("input[type=reset]");
+        //    var query5 = document.querySelectorAll("input[type=text].form-control");
+
+        //    query3[0].innerText = "Nombre completo";
+        //}
 
     </script>
 </body>

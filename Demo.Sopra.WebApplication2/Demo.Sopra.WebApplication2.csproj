@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\app.css" />
+    <Content Include="ejercicio1.html" />
+    <Content Include="ejercicio2.html" />
     <Content Include="grid.html" />
     <Content Include="formulario.html" />
     <Content Include="index.html" />
